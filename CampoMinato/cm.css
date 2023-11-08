@@ -1,0 +1,148 @@
+/*  CSS RESET   */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*  Regole generiche    */
+body {
+    padding: 16px;
+    line-height: 1;
+    color: white;
+    background-color: rgb(216, 238, 232);
+    font-family: 'Darker Grotesque', sans-serif;
+
+    background-image: url(images/1014378.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/*  pannello di gioco   */
+.game-container {
+    width: 484px;
+}
+
+h1 {
+    font-size: 40px;
+}  
+
+.score {
+    font-size: 32px;
+    display: flex;
+    justify-content: space-between;
+}
+/*  Tabellone di gioco  */
+.game-board {
+    border: 2px solid white;
+    position: relative;
+    margin-top: 1rem;
+}
+
+.grid {
+    height: 480px;
+    width: 480px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cell {
+    width: 48px;
+    height: 48px;
+    
+}
+
+.cell-dark {
+    width: 48px;
+    height: 48px;
+    background-color: rgb(203, 224, 221);
+}
+
+.cell-clicked {
+    background-color: rgb(157, 197, 199);
+}
+
+.cell-bomb {
+    background-image: url(images/GR\ DAN\ 557-22.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    right: 15px;
+}
+
+/*  Schermata fine gioco*/
+.end-game-screen {
+    position: absolute;
+    background-color: rgba(192, 35, 35, 0.5);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.win {
+    background-color: rgba(78, 241, 187, 0.6);
+}
+.end-game-text {
+    font-size: 48px;
+    line-height: 1.2;
+    font-family: 'Press Start 2P', cursive;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+button {
+    border: 2px solid rgb(0, 23, 50);
+    font-size: 24px;
+    font-family: 'Darker Grotesque', sans-serif;
+    text-transform: uppercase;
+    padding: 4px 20px 8px 20px;
+    cursor: pointer; 
+}
+
+button:hover {
+    background-color: rgb(203, 224, 221);
+}
+
+.hidden {
+    display: none;
+}
+#easy-button {
+    background-color:  rgba(0, 128, 0, 0.5);  
+}
+#easy-button:hover {
+    background-color:  green;
+}
+#medium-button {
+    background-color: rgba(255, 255, 0, 0.5);
+}
+#medium-button:hover {
+    background-color: yellow;
+}
+
+#hard-button {
+    background-color: rgba(255, 0, 0, 0.5);
+}
+#hard-button:hover {
+    background-color: red;
+}
+
+.difficulty-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-left:85px;
+    margin-right: 85px;
+}
