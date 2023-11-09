@@ -36,7 +36,7 @@ function initGame(difficulty) {
     setDifficulty(difficulty);
     bombsList = [];
     while(bombsList.length < totalBombs) {
-        const number = Math.floor(Math.random() * totalCells) + 1;
+        const number = Math.floor(Math.random() * totalCells) - 1;
         if(!bombsList.includes(number)) bombsList.push(number);
     }
     console.log(bombsList);
