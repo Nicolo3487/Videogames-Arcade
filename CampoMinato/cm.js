@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Tutto il tuo codice JavaScript qui
  
 /*  CREAZIONE TABELLA  */
 const scoreCounter = document.querySelector('.score-counter');
@@ -26,7 +25,7 @@ function setDifficulty(difficulty) {
         totalCells = 101;
         totalBombs = 30;
     }
-    maxScore = totalCells - totalBombs;
+    maxScore = (totalCells - 1) - totalBombs;
     bombsList = [];
     score = 0;
 }
@@ -36,9 +35,10 @@ function initGame(difficulty) {
     setDifficulty(difficulty);
     bombsList = [];
     while(bombsList.length < totalBombs) {
-        const number = Math.floor(Math.random() * totalCells) - 1;
+        const number = Math.floor(Math.random() * totalCells - 1)+ 1;
         if(!bombsList.includes(number)) bombsList.push(number);
     }
+    bombsList.sort((a,b)=> a -b)
     console.log(bombsList);
     createGrid();
 }
@@ -120,7 +120,9 @@ function createGrid() {
 function updateScore() {
     score++;
     scoreCounter.innerText = String(score).padStart(5, 0);
-    if(score === maxScore) endGame(true);
+    if(score === maxScore) {
+       endGame(true); 
+    } 
 }
 
 function endGame(isVictory) {
@@ -130,7 +132,7 @@ function endGame(isVictory) {
     } else {
        revealBombs(); 
     }
-    
+    console.log()
     endGameScreen.classList.remove('hidden');
 }
 
@@ -152,3 +154,4 @@ function revealBombs() {
     }
 }
 });
+
